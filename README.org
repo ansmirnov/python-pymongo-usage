@@ -1,3 +1,10 @@
 #+TITLE: Examples of CRUD in MongoDB using the pymongo Python module
 #+PROPERTY: header-args :session *shell mongodb* :results silent raw
 
+** Contents                                                           :TOC_3:
+  - [[#system-environment][System environment]]
+
+** System environment
+
+- Deployed MongoDB 4.4.3
+
