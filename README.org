@@ -6,6 +6,7 @@
   - [[#install-pymongo][Install pymongo]]
   - [[#imports][Imports]]
   - [[#parameters][Parameters]]
+  - [[#construct-the-uri][Construct the URI]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -41,6 +42,12 @@ MONGODB_USERNAME=os.environ.get("MONGODB_USERNAME")
 MONGODB_PASSWORD=os.environ.get("MONGODB_PASSWORD")
 MONGODB_HOST=os.environ.get("MONGODB_HOST")
 MONGODB_DATABASE=os.environ.get("MONGODB_DATABASE")
+#+END_SRC
+
+** Construct the URI
+
+#+BEGIN_SRC python
+uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_DATABASE}"
 #+END_SRC
 
 ** Docker container
