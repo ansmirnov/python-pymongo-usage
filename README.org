@@ -7,7 +7,7 @@
   - [[#imports][Imports]]
   - [[#parameters][Parameters]]
   - [[#construct-the-uri][Construct the URI]]
-  - [[#connect-to-the-database][Connect to the database]]
+  - [[#connect-to-the-mongodb][Connect to the MongoDB]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -52,7 +52,7 @@ MONGODB_DATABASE = os.environ.get("MONGODB_DATABASE")
 uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_DATABASE}"
 #+END_SRC
 
-** Connect to the database
+** Connect to the MongoDB
 
 #+BEGIN_SRC python
 connection = MongoClient(uri)
