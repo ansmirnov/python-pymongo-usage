@@ -26,6 +26,10 @@ pip install pymongo==3.11.3
 ** Imports
 
 #+BEGIN_SRC python
+import os
+#+END_SRC
+
+#+BEGIN_SRC python
 from pymongo import MongoClient
 #+END_SRC
 
