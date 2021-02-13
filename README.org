@@ -7,6 +7,7 @@
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
+    - [[#run-the-container][Run the container]]
 
 ** System environment
 
@@ -34,3 +35,8 @@ RUN pip install pymongo==3.11.3
 docker build -t python-pymongo-usage .
 #+END_SRC
 
+*** Run the container
+
+#+BEGIN_SRC sh
+docker run --link mongodb -it python-pymongo-usage python
+#+END_SRC
