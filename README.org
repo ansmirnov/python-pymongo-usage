@@ -3,8 +3,15 @@
 
 ** Contents                                                           :TOC_3:
   - [[#system-environment][System environment]]
+  - [[#install-pymongo][Install pymongo]]
 
 ** System environment
 
 - Deployed MongoDB 4.4.3
+
+** Install pymongo
+
+#+BEGIN_SRC sh
+pip install pymongo
+#+END_SRC
 
