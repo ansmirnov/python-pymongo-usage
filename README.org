@@ -53,7 +53,7 @@ MONGODB_COLLECTION = os.environ.get("MONGODB_COLLECTION")
 ** Construct the URI
 
 #+BEGIN_SRC python
-uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_DATABASE}"
+uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}"
 #+END_SRC
 
 ** Connect to the MongoDB
