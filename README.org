@@ -8,6 +8,7 @@
   - [[#parameters][Parameters]]
   - [[#construct-the-uri][Construct the URI]]
   - [[#connect-to-the-mongodb][Connect to the MongoDB]]
+  - [[#select-the-database][Select the database]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -56,6 +57,12 @@ uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_
 
 #+BEGIN_SRC python
 connection = MongoClient(uri)
+#+END_SRC
+
+** Select the database
+
+#+BEGIN_SRC python
+db = connection[MONGODB_DATABASE]
 #+END_SRC
 
 ** Docker container
