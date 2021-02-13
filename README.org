@@ -10,6 +10,7 @@
   - [[#connect-to-the-mongodb][Connect to the MongoDB]]
   - [[#select-the-database][Select the database]]
   - [[#select-the-collection][Select the collection]]
+  - [[#insert-data][Insert data]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -72,6 +73,25 @@ db = connection[MONGODB_DATABASE]
 
 #+BEGIN_SRC python
 collection = db[MONGODB_COLLECTION]
+#+END_SRC
+
+** Insert data
+
+#+BEGIN_SRC python
+doc = {
+    "item": "canvas",
+    "qty": 100,
+    "tags": ["cotton"],
+    "size": {
+	"h": 28,
+	"w": 35.5,
+	"uom": "cm"
+    }
+}
+#+END_SRC
+
+#+BEGIN_SRC python
+collection.insert_one(doc)
 #+END_SRC
 
 ** Docker container
