@@ -9,6 +9,7 @@
   - [[#construct-the-uri][Construct the URI]]
   - [[#connect-to-the-mongodb][Connect to the MongoDB]]
   - [[#select-the-database][Select the database]]
+  - [[#select-the-collection][Select the collection]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -64,6 +65,12 @@ connection = MongoClient(uri)
 
 #+BEGIN_SRC python
 db = connection[MONGODB_DATABASE]
+#+END_SRC
+
+** Select the collection
+
+#+BEGIN_SRC python
+collection = db[MONGODB_COLLECTION]
 #+END_SRC
 
 ** Docker container
