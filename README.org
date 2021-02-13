@@ -11,6 +11,7 @@
   - [[#select-the-database][Select the database]]
   - [[#select-the-collection][Select the collection]]
   - [[#insert-data][Insert data]]
+  - [[#read-data][Read data]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -92,6 +93,17 @@ doc = {
 
 #+BEGIN_SRC python
 collection.insert_one(doc)
+#+END_SRC
+
+** Read data
+
+#+BEGIN_SRC python
+cursor = collection.find({})
+#+END_SRC
+
+#+BEGIN_SRC python
+for inventory in cursor:
+     pprint(inventory)
 #+END_SRC
 
 ** Docker container
