@@ -84,7 +84,7 @@ MONGODB_DATABASE=newdb
 *** Run the container
 
 #+BEGIN_SRC sh
-docker run --link mongodb -it python-pymongo-usage python
+docker run --rm --link mongodb --env-file .env -it python-pymongo-usage python
 #+END_SRC
 
 ** References
