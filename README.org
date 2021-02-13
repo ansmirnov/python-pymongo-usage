@@ -9,7 +9,7 @@
 
 - Deployed MongoDB 4.4.3
 
-- Python 
+- Python 3.9.1
 
 ** Install pymongo
 
