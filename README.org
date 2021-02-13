@@ -9,9 +9,11 @@
 
 - Deployed MongoDB 4.4.3
 
+- Python 
+
 ** Install pymongo
 
 #+BEGIN_SRC sh
-pip install pymongo
+pip install pymongo==3.11.3
 #+END_SRC
 
