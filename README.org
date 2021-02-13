@@ -8,6 +8,7 @@
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
     - [[#run-the-container][Run the container]]
+  - [[#references][References]]
 
 ** System environment
 
@@ -40,3 +41,17 @@ docker build -t python-pymongo-usage .
 #+BEGIN_SRC sh
 docker run --link mongodb -it python-pymongo-usage python
 #+END_SRC
+
+** References
+
+1. https://docs.mongodb.com/guides/server/insert/
+
+2. https://docs.mongodb.com/guides/server/read/
+
+3. https://docs.mongodb.com/guides/server/read_queries/
+
+4. https://docs.mongodb.com/guides/server/read_operators/
+
+5. https://docs.mongodb.com/guides/server/update/
+
+6. https://docs.mongodb.com/guides/server/delete/
