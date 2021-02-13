@@ -45,6 +45,7 @@ MONGODB_USERNAME = os.environ.get("MONGODB_USERNAME")
 MONGODB_PASSWORD = os.environ.get("MONGODB_PASSWORD")
 MONGODB_HOST = os.environ.get("MONGODB_HOST")
 MONGODB_DATABASE = os.environ.get("MONGODB_DATABASE")
+MONGODB_COLLECTION = os.environ.get("MONGODB_COLLECTION")
 #+END_SRC
 
 ** Construct the URI
@@ -86,6 +87,7 @@ MONGODB_USERNAME=user
 MONGODB_PASSWORD=topsecret
 MONGODB_HOST=mongodb
 MONGODB_DATABASE=newdb
+MONGODB_COLLECTION=testcollection
 #+END_SRC
 
 *** Run the container
