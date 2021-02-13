@@ -4,6 +4,7 @@
 ** Contents                                                           :TOC_3:
   - [[#system-environment][System environment]]
   - [[#install-pymongo][Install pymongo]]
+  - [[#imports][Imports]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -20,6 +21,12 @@
 
 #+BEGIN_SRC sh
 pip install pymongo==3.11.3
+#+END_SRC
+
+** Imports
+
+#+BEGIN_SRC python
+from pymongo import MongoClient
 #+END_SRC
 
 ** Docker container
