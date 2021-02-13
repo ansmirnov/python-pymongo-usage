@@ -11,6 +11,7 @@
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
+    - [[#configure][Configure]]
     - [[#run-the-container][Run the container]]
   - [[#references][References]]
 
@@ -69,6 +70,15 @@ RUN pip install pymongo==3.11.3
 
 #+BEGIN_SRC sh
 docker build -t python-pymongo-usage .
+#+END_SRC
+
+*** Configure
+
+#+BEGIN_SRC conf :tangle .env.dist
+MONGODB_USERNAME=user
+MONGODB_PASSWORD=topsecret
+MONGODB_HOST=mongodb
+MONGODB_DATABASE=newdb
 #+END_SRC
 
 *** Run the container
