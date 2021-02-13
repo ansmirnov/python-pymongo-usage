@@ -4,6 +4,8 @@
 ** Contents                                                           :TOC_3:
   - [[#system-environment][System environment]]
   - [[#install-pymongo][Install pymongo]]
+  - [[#docker-container][Docker container]]
+    - [[#build-image][Build image]]
 
 ** System environment
 
@@ -15,5 +17,12 @@
 
 #+BEGIN_SRC sh
 pip install pymongo==3.11.3
+#+END_SRC
+
+** Docker container
+*** Build image
+
+#+BEGIN_SRC sh
+docker build -t python-pymongo-usage .
 #+END_SRC
 
