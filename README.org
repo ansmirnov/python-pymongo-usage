@@ -5,6 +5,7 @@
   - [[#system-environment][System environment]]
   - [[#install-pymongo][Install pymongo]]
   - [[#imports][Imports]]
+  - [[#parameters][Parameters]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -31,6 +32,15 @@ import os
 
 #+BEGIN_SRC python
 from pymongo import MongoClient
+#+END_SRC
+
+** Parameters
+
+#+BEGIN_SRC python
+MONGODB_USERNAME=os.environ.get("MONGODB_USERNAME")
+MONGODB_PASSWORD=os.environ.get("MONGODB_PASSWORD")
+MONGODB_HOST=os.environ.get("MONGODB_HOST")
+MONGODB_DATABASE=os.environ.get("MONGODB_DATABASE")
 #+END_SRC
 
 ** Docker container
