@@ -10,7 +10,7 @@
   - [[#connect-to-the-mongodb][Connect to the MongoDB]]
   - [[#select-the-database][Select the database]]
   - [[#select-the-collection][Select the collection]]
-  - [[#insert-data][Insert data]]
+  - [[#insert-documents][Insert Documents]]
   - [[#find-data][Find data]]
     - [[#find-all][Find all]]
     - [[#find-with-a-criteria][Find with a criteria]]
@@ -79,7 +79,7 @@ db = connection[MONGODB_DATABASE]
 collection = db[MONGODB_COLLECTION]
 #+END_SRC
 
-** Insert data
+** Insert Documents
 
 #+BEGIN_SRC python
 doc = {
@@ -90,8 +90,7 @@ doc = {
 	"h": 28,
 	"w": 35.5,
 	"uom": "cm"
-    },
-    "status": "B"
+    }
 }
 #+END_SRC
 
