@@ -29,6 +29,7 @@
     - [[#replace-documents][Replace documents]]
   - [[#delete-documents][Delete Documents]]
     - [[#delete-one][Delete one]]
+    - [[#delete-many][Delete many]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -241,6 +242,12 @@ collection.replace_one(query, doc)
 
 #+BEGIN_SRC python
 collection.delete_one(query)
+#+END_SRC
+
+*** Delete many
+
+#+BEGIN_SRC python
+collection.delete_many(query)
 #+END_SRC
 
 ** Docker container
