@@ -87,7 +87,8 @@ doc = {
 	"h": 28,
 	"w": 35.5,
 	"uom": "cm"
-    }
+    },
+    "status": "B"
 }
 #+END_SRC
 
