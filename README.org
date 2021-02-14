@@ -22,6 +22,8 @@
     - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
   - [[#find-documents][Find documents]]
   - [[#print-cursor-data][Print cursor data]]
+  - [[#update-documents][Update Documents]]
+    - [[#update-operator][Update operator]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -198,6 +200,16 @@ cursor = collection.find(query)
 #+BEGIN_SRC python
 for doc in cursor:
      pprint(doc)
+#+END_SRC
+
+** Update Documents
+*** Update operator
+
+#+BEGIN_SRC python
+update_operator = {
+    "$set": {"size.uom": "cm", "status": "P"},
+    "$currentDate": {"lastModified": True}
+}
 #+END_SRC
 
 ** Docker container
