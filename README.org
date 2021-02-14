@@ -115,8 +115,8 @@ cursor = collection.find({"status": "B"})
 *** Print results
 
 #+BEGIN_SRC python
-for inventory in cursor:
-     pprint(inventory)
+for doc in cursor:
+     pprint(doc)
 #+END_SRC
 
 ** Docker container
