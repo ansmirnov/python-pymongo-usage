@@ -13,9 +13,9 @@
   - [[#insert-documents][Insert Documents]]
     - [[#insert-one-document][Insert one document]]
     - [[#insert-multiple-documents][Insert multiple documents]]
-  - [[#find-data][Find data]]
-    - [[#find-all][Find all]]
-    - [[#find-with-a-criteria][Find with a criteria]]
+  - [[#query-documents][Query documents]]
+    - [[#select-all-documents-in-a-collection][Select All Documents in a Collection]]
+    - [[#specify-equality-condition][Specify Equality Condition]]
     - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
@@ -143,14 +143,14 @@ docs = [
 collection.insert_many(docs)
 #+END_SRC
 
-** Find data
-*** Find all
+** Query documents
+*** Select All Documents in a Collection
 
 #+BEGIN_SRC python
 cursor = collection.find({})
 #+END_SRC
 
-*** Find with a criteria
+*** Specify Equality Condition
 
 #+BEGIN_SRC python
 cursor = collection.find({"status": "D"})
