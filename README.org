@@ -11,6 +11,8 @@
   - [[#select-the-database][Select the database]]
   - [[#select-the-collection][Select the collection]]
   - [[#insert-documents][Insert Documents]]
+    - [[#insert-one-document][Insert one document]]
+    - [[#insert-multiple-documents][Insert multiple documents]]
   - [[#find-data][Find data]]
     - [[#find-all][Find all]]
     - [[#find-with-a-criteria][Find with a criteria]]
@@ -81,6 +83,8 @@ collection = db[MONGODB_COLLECTION]
 
 ** Insert Documents
 
+*** Insert one document
+
 #+BEGIN_SRC python
 doc = {
     "item": "canvas",
@@ -96,6 +100,35 @@ doc = {
 
 #+BEGIN_SRC python
 collection.insert_one(doc)
+#+END_SRC
+
+*** Insert multiple documents
+
+#+BEGIN_SRC python
+docs = [
+    {
+        "item": "journal",
+        "qty": 25,
+        "tags": ["blank", "red"],
+        "size": {"h": 14, "w": 21, "uom": "cm"}
+    },
+    {
+        "item": "mat",
+        "qty": 85,
+        "tags": ["gray"],
+        "size": {"h": 27.9, "w": 35.5, "uom": "cm"}
+    },
+    {
+        "item": "mousepad",
+        "qty": 25,
+        "tags": ["gel", "blue"],
+        "size": {"h": 19, "w": 22.85, "uom": "cm"}
+    }
+]
+#+END_SRC
+
+#+BEGIN_SRC python
+collection.insert_many(docs)
 #+END_SRC
 
 ** Find data
