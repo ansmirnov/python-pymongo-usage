@@ -13,6 +13,7 @@
   - [[#insert-data][Insert data]]
   - [[#find-data][Find data]]
     - [[#find-all][Find all]]
+    - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
