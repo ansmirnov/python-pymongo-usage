@@ -18,6 +18,7 @@
     - [[#specify-equality-condition][Specify Equality Condition]]
     - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
     - [[#specify-and-conditions][Specify AND Conditions]]
+    - [[#specify-or-conditions][Specify OR Conditions]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
@@ -167,6 +168,12 @@ cursor = collection.find({"status": {"$in": ["A", "D"]}})
 
 #+BEGIN_SRC python
 cursor = collection.find({"status": "A", "qty": {"$lt": 30}})
+#+END_SRC
+
+*** Specify OR Conditions
+
+#+BEGIN_SRC python
+cursor = collection.find({"$or": [{"status": "A"}, {"qty": {"$lt": 30}}]})
 #+END_SRC
 
 *** Print results
