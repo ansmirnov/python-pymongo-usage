@@ -19,6 +19,7 @@
     - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
     - [[#specify-and-conditions][Specify AND Conditions]]
     - [[#specify-or-conditions][Specify OR Conditions]]
+    - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
@@ -174,6 +175,14 @@ cursor = collection.find({"status": "A", "qty": {"$lt": 30}})
 
 #+BEGIN_SRC python
 cursor = collection.find({"$or": [{"status": "A"}, {"qty": {"$lt": 30}}]})
+#+END_SRC
+
+*** Specify AND as well as OR Conditions
+
+#+BEGIN_SRC python
+cursor = collection.find({
+    "status": "A",
+    "$or": [{"qty": {"$lt": 30}}, {"item": {"$regex": "^p"}}]})
 #+END_SRC
 
 *** Print results
