@@ -25,6 +25,7 @@
   - [[#update-documents][Update Documents]]
     - [[#update-operator][Update operator]]
     - [[#update-one][Update one]]
+    - [[#update-many][Update many]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -217,6 +218,12 @@ update_operator = {
 
 #+BEGIN_SRC python
 collection.update_one(query, update_operator)
+#+END_SRC
+
+*** Update many
+
+#+BEGIN_SRC python
+collection.update_many(query, update_operator)
 #+END_SRC
 
 ** Docker container
