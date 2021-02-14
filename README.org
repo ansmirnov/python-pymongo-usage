@@ -20,7 +20,7 @@
     - [[#specify-and-conditions][Specify AND Conditions]]
     - [[#specify-or-conditions][Specify OR Conditions]]
     - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
-    - [[#print-results][Print results]]
+  - [[#find-documents][Find documents]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -150,42 +150,47 @@ collection.insert_many(docs)
 *** Select All Documents in a Collection
 
 #+BEGIN_SRC python
-cursor = collection.find({})
+query = {}
 #+END_SRC
 
 *** Specify Equality Condition
 
 #+BEGIN_SRC python
-cursor = collection.find({"status": "D"})
+query = {"status": "D"}
 #+END_SRC
 
 *** Specify Conditions Using Query Operators
 
 #+BEGIN_SRC python
-cursor = collection.find({"status": {"$in": ["A", "D"]}})
+query = {"status": {"$in": ["A", "D"]}}
 #+END_SRC
 
 *** Specify AND Conditions
 
 #+BEGIN_SRC python
-cursor = collection.find({"status": "A", "qty": {"$lt": 30}})
+query = {"status": "A", "qty": {"$lt": 30}}
 #+END_SRC
 
 *** Specify OR Conditions
 
 #+BEGIN_SRC python
-cursor = collection.find({"$or": [{"status": "A"}, {"qty": {"$lt": 30}}]})
+query = {"$or": [{"status": "A"}, {"qty": {"$lt": 30}}]}
 #+END_SRC
 
 *** Specify AND as well as OR Conditions
 
 #+BEGIN_SRC python
-cursor = collection.find({
+query = {
     "status": "A",
-    "$or": [{"qty": {"$lt": 30}}, {"item": {"$regex": "^p"}}]})
+    "$or": [{"qty": {"$lt": 30}}, {"item": {"$regex": "^p"}}]
+}
 #+END_SRC
 
-*** Print results
+** Find documents
+
+#+BEGIN_SRC python
+cursor = collection.find(query)
+#+END_SRC
 
 #+BEGIN_SRC python
 for doc in cursor:
