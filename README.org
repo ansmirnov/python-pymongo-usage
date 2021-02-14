@@ -82,7 +82,6 @@ collection = db[MONGODB_COLLECTION]
 #+END_SRC
 
 ** Insert Documents
-
 *** Insert one document
 
 #+BEGIN_SRC python
