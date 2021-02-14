@@ -17,6 +17,7 @@
     - [[#select-all-documents-in-a-collection][Select All Documents in a Collection]]
     - [[#specify-equality-condition][Specify Equality Condition]]
     - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
+    - [[#specify-and-conditions][Specify AND Conditions]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
@@ -160,6 +161,12 @@ cursor = collection.find({"status": "D"})
 
 #+BEGIN_SRC python
 cursor = collection.find({"status": {"$in": ["A", "D"]}})
+#+END_SRC
+
+*** Specify AND Conditions
+
+#+BEGIN_SRC python
+cursor = collection.find({"status": "A", "qty": {"$lt": 30}})
 #+END_SRC
 
 *** Print results
