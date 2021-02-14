@@ -237,7 +237,6 @@ collection.replace_one(query, doc)
 #+END_SRC
 
 ** Delete Documents
-
 *** Delete one
 
 #+BEGIN_SRC python
