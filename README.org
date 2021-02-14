@@ -13,7 +13,7 @@
   - [[#insert-documents][Insert Documents]]
     - [[#insert-one-document][Insert one document]]
     - [[#insert-multiple-documents][Insert multiple documents]]
-  - [[#query-documents][Query documents]]
+  - [[#queries][Queries]]
     - [[#select-all-documents-in-a-collection][Select All Documents in a Collection]]
     - [[#specify-equality-condition][Specify Equality Condition]]
     - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
@@ -146,7 +146,7 @@ docs = [
 collection.insert_many(docs)
 #+END_SRC
 
-** Query documents
+** Queries
 *** Select All Documents in a Collection
 
 #+BEGIN_SRC python
