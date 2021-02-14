@@ -16,6 +16,7 @@
   - [[#find-data][Find data]]
     - [[#find-all][Find all]]
     - [[#find-with-a-criteria][Find with a criteria]]
+    - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
@@ -153,6 +154,12 @@ cursor = collection.find({})
 
 #+BEGIN_SRC python
 cursor = collection.find({"status": "D"})
+#+END_SRC
+
+*** Specify Conditions Using Query Operators
+
+#+BEGIN_SRC python
+cursor = collection.find({"status": {"$in": ["A", "D"]}})
 #+END_SRC
 
 *** Print results
