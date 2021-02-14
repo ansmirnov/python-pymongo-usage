@@ -13,6 +13,7 @@
   - [[#insert-data][Insert data]]
   - [[#find-data][Find data]]
     - [[#find-all][Find all]]
+    - [[#find-with-a-criteria][Find with a criteria]]
     - [[#print-results][Print results]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
@@ -103,6 +104,12 @@ collection.insert_one(doc)
 
 #+BEGIN_SRC python
 cursor = collection.find({})
+#+END_SRC
+
+*** Find with a criteria
+
+#+BEGIN_SRC python
+cursor = collection.find({"status": "B"})
 #+END_SRC
 
 *** Print results
