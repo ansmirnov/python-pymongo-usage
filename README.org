@@ -21,6 +21,7 @@
     - [[#specify-or-conditions][Specify OR Conditions]]
     - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
   - [[#find-documents][Find documents]]
+  - [[#print-cursor-data][Print cursor data]]
   - [[#docker-container][Docker container]]
     - [[#dockerfile][Dockerfile]]
     - [[#build-the-image][Build the image]]
@@ -191,6 +192,8 @@ query = {
 #+BEGIN_SRC python
 cursor = collection.find(query)
 #+END_SRC
+
+** Print cursor data
 
 #+BEGIN_SRC python
 for doc in cursor:
