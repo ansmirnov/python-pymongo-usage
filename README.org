@@ -141,14 +141,4 @@ docker run --rm --link mongodb --env-file .env -it python-pymongo-usage python
 
 ** References
 
-1. https://docs.mongodb.com/guides/server/insert/
-
-2. https://docs.mongodb.com/guides/server/read/
-
-3. https://docs.mongodb.com/guides/server/read_queries/
-
-4. https://docs.mongodb.com/guides/server/read_operators/
-
-5. https://docs.mongodb.com/guides/server/update/
-
-6. https://docs.mongodb.com/guides/server/delete/
+1. https://docs.mongodb.com/manual/crud/
