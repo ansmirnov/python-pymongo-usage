@@ -104,6 +104,8 @@ collection.insert_one(doc)
 cursor = collection.find({})
 #+END_SRC
 
+*** Print results
+
 #+BEGIN_SRC python
 for inventory in cursor:
      pprint(inventory)
