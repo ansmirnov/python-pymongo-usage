@@ -152,7 +152,7 @@ cursor = collection.find({})
 *** Find with a criteria
 
 #+BEGIN_SRC python
-cursor = collection.find({"status": "B"})
+cursor = collection.find({"status": "D"})
 #+END_SRC
 
 *** Print results
