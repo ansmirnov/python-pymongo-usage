@@ -23,7 +23,6 @@
   - [[#find-documents][Find documents]]
   - [[#print-cursor-data][Print cursor data]]
   - [[#update-documents][Update Documents]]
-    - [[#update-operator][Update operator]]
     - [[#update-one][Update one]]
     - [[#update-many][Update many]]
     - [[#replace-documents][Replace documents]]
@@ -209,15 +208,6 @@ for doc in cursor:
 #+END_SRC
 
 ** Update Documents
-*** Update operator
-
-#+BEGIN_SRC python
-update_operator = {
-    "$set": {"size.uom": "cm", "status": "P"},
-    "$currentDate": {"lastModified": True}
-}
-#+END_SRC
-
 *** Update one
 
 #+BEGIN_SRC python
