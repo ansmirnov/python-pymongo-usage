@@ -26,6 +26,7 @@
   - [[#find-documents][Find documents]]
   - [[#update-operators][Update Operators]]
     - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
+    - [[#increment-the-value-of-the-field-by-the-specified-amount][Increment the value of the field by the specified amount]]
   - [[#update-documents][Update Documents]]
     - [[#update-one][Update one]]
     - [[#update-many][Update many]]
@@ -220,6 +221,17 @@ update_operator = {
         "current_date_default": True,
         "current_date": {"$type": "date"},
         "current_timestamp": {"$type": "timestamp"}
+    }
+}
+#+END_SRC
+
+*** Increment the value of the field by the specified amount
+
+#+BEGIN_SRC python
+update_operator = {
+    "$inc": {
+        "emptyField": 1,
+        "a.a": 1,
     }
 }
 #+END_SRC
