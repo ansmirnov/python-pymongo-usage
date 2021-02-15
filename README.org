@@ -215,9 +215,9 @@ for doc in cursor:
 #+BEGIN_SRC python
 update_operator = {
     "$currentDate": {
-        "current_date_default": "true"
-        "current_date": "date",
-        "current_timestamp": "current_timestamp"
+        "current_date_default": True,
+        "current_date": {"$type": "date"},
+        "current_timestamp": {"$type": "timestamp"}
     }
 }
 #+END_SRC
