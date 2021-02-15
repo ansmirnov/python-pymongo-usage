@@ -21,7 +21,6 @@
     - [[#specify-or-conditions][Specify OR Conditions]]
     - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
   - [[#find-documents][Find documents]]
-  - [[#print-cursor-data][Print cursor data]]
   - [[#update-operators][Update Operators]]
     - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
   - [[#update-documents][Update Documents]]
@@ -200,11 +199,6 @@ query = {
 
 #+BEGIN_SRC python
 cursor = collection.find(query)
-#+END_SRC
-
-** Print cursor data
-
-#+BEGIN_SRC python
 for doc in cursor:
      pprint(doc)
 #+END_SRC
