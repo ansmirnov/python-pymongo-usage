@@ -22,6 +22,8 @@
     - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
   - [[#find-documents][Find documents]]
   - [[#print-cursor-data][Print cursor data]]
+  - [[#update-operators][Update Operators]]
+    - [[#ses-the-value-of-a-field-to-current-date][Ses the value of a field to current date]]
   - [[#update-documents][Update Documents]]
     - [[#update-one][Update one]]
     - [[#update-many][Update many]]
@@ -205,6 +207,19 @@ cursor = collection.find(query)
 #+BEGIN_SRC python
 for doc in cursor:
      pprint(doc)
+#+END_SRC
+
+** Update Operators
+*** Ses the value of a field to current date
+
+#+BEGIN_SRC python
+update_operator = {
+    "$currentDate": {
+        "current_date_default": "true"
+        "current_date": "date",
+        "current_timestamp": "current_timestamp"
+    }
+}
 #+END_SRC
 
 ** Update Documents
