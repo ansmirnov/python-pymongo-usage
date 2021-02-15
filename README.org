@@ -1,4 +1,4 @@
-#+TITLE: Examples of CRUD in MongoDB using the pymongo Python module
+#+TITLE: Python PyMongo usage
 #+PROPERTY: header-args :session *shell mongodb* :results silent raw
 
 ** Contents                                                           :TOC_3:
