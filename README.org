@@ -23,7 +23,7 @@
   - [[#find-documents][Find documents]]
   - [[#print-cursor-data][Print cursor data]]
   - [[#update-operators][Update Operators]]
-    - [[#ses-the-value-of-a-field-to-current-date][Ses the value of a field to current date]]
+    - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
   - [[#update-documents][Update Documents]]
     - [[#update-one][Update one]]
     - [[#update-many][Update many]]
