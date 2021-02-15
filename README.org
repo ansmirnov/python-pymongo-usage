@@ -10,6 +10,9 @@
   - [[#connect-to-the-mongodb][Connect to the MongoDB]]
   - [[#select-the-database][Select the database]]
   - [[#select-the-collection][Select the collection]]
+  - [[#example-docs][Example docs]]
+    - [[#one-doc][One doc]]
+    - [[#many-doc][Many doc]]
   - [[#insert-documents][Insert Documents]]
     - [[#insert-one-document][Insert one document]]
     - [[#insert-multiple-documents][Insert multiple documents]]
@@ -94,8 +97,8 @@ db = connection[MONGODB_DATABASE]
 collection = db[MONGODB_COLLECTION]
 #+END_SRC
 
-** Insert Documents
-*** Insert one document
+** Example docs
+*** One doc
 
 #+BEGIN_SRC python
 doc = {
@@ -110,11 +113,7 @@ doc = {
 }
 #+END_SRC
 
-#+BEGIN_SRC python
-collection.insert_one(doc)
-#+END_SRC
-
-*** Insert multiple documents
+*** Many doc
 
 #+BEGIN_SRC python
 docs = [
@@ -150,6 +149,15 @@ docs = [
     }
 ]
 #+END_SRC
+
+** Insert Documents
+*** Insert one document
+
+#+BEGIN_SRC python
+collection.insert_one(doc)
+#+END_SRC
+
+*** Insert multiple documents
 
 #+BEGIN_SRC python
 collection.insert_many(docs)
