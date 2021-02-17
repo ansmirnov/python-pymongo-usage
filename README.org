@@ -38,7 +38,7 @@
     - [[#delete-documents][Delete Documents]]
       - [[#delete-one][Delete one]]
       - [[#delete-many][Delete many]]
-    - [[#docker-container][Docker container]]
+  - [[#docker-container][Docker container]]
       - [[#dockerfile][Dockerfile]]
       - [[#build-the-image][Build the image]]
       - [[#configure][Configure]]
@@ -281,7 +281,7 @@ collection.delete_one(query)
 collection.delete_many(query)
 #+END_SRC
 
-*** Docker container
+** Docker container
 **** Dockerfile
 
 #+BEGIN_SRC conf :tangle Dockerfile
