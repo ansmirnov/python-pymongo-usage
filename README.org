@@ -40,6 +40,7 @@
     - [[#delete-documents][Delete Documents]]
       - [[#delete-one][Delete one]]
       - [[#delete-many][Delete many]]
+    - [[#aggregate-operator][Aggregate operator]]
     - [[#print-the-cursor-data][Print the cursor data]]
   - [[#docker-container][Docker container]]
       - [[#dockerfile][Dockerfile]]
@@ -292,6 +293,12 @@ collection.delete_one(query)
 
 #+BEGIN_SRC python
 collection.delete_many(query)
+#+END_SRC
+
+*** Aggregate operator
+
+#+BEGIN_SRC python
+cursor = collection.aggregate(pipeline)
 #+END_SRC
 
 *** Print the cursor data
