@@ -28,6 +28,7 @@
     - [[#aggregation-operators][Aggregation Operators]]
       - [[#limit][Limit]]
       - [[#match][Match]]
+      - [[#projection][Projection]]
   - [[#run-the-command][Run the command]]
     - [[#insert-documents][Insert Documents]]
       - [[#insert-one-document][Insert one document]]
@@ -245,6 +246,14 @@ pipeline.append({
 #+BEGIN_SRC python
 pipeline.append({
     "$match": { "status": "A"}
+**** Projection
+
+#+BEGIN_SRC python
+pipeline.append({
+    "$project": {"status": 1}
+})
+#+END_SRC
+
 })
 #+END_SRC
 
