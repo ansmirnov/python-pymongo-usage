@@ -1,44 +1,47 @@
 #+TITLE: Python PyMongo usage
 #+PROPERTY: header-args :session *shell mongodb* :results silent raw
 
-** Contents                                                           :TOC_3:
+** Contents                                                           :TOC_4:
   - [[#system-environment][System environment]]
   - [[#install-pymongo][Install pymongo]]
   - [[#imports][Imports]]
-  - [[#parameters][Parameters]]
-  - [[#construct-the-uri][Construct the URI]]
-  - [[#connect-to-the-mongodb][Connect to the MongoDB]]
-  - [[#select-the-database][Select the database]]
-  - [[#select-the-collection][Select the collection]]
-  - [[#example-docs][Example docs]]
-    - [[#one-doc][One doc]]
-    - [[#many-doc][Many doc]]
-  - [[#insert-documents][Insert Documents]]
-    - [[#insert-one-document][Insert one document]]
-    - [[#insert-multiple-documents][Insert multiple documents]]
-  - [[#queries][Queries]]
-    - [[#select-all-documents-in-a-collection][Select All Documents in a Collection]]
-    - [[#specify-equality-condition][Specify Equality Condition]]
-    - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
-    - [[#specify-and-conditions][Specify AND Conditions]]
-    - [[#specify-or-conditions][Specify OR Conditions]]
-    - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
-  - [[#find-documents][Find documents]]
-  - [[#update-operators][Update Operators]]
-    - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
-    - [[#increment-the-value-of-the-field-by-the-specified-amount][Increment the value of the field by the specified amount]]
-  - [[#update-documents][Update Documents]]
-    - [[#update-one][Update one]]
-    - [[#update-many][Update many]]
-    - [[#replace-documents][Replace documents]]
-  - [[#delete-documents][Delete Documents]]
-    - [[#delete-one][Delete one]]
-    - [[#delete-many][Delete many]]
-  - [[#docker-container][Docker container]]
-    - [[#dockerfile][Dockerfile]]
-    - [[#build-the-image][Build the image]]
-    - [[#configure][Configure]]
-    - [[#run-the-container][Run the container]]
+  - [[#initialize-the-connection][Initialize the connection]]
+    - [[#parameters][Parameters]]
+    - [[#construct-the-uri][Construct the URI]]
+    - [[#connect-to-the-mongodb][Connect to the MongoDB]]
+    - [[#select-the-database][Select the database]]
+    - [[#select-the-collection][Select the collection]]
+  - [[#prepare-the-arguments][Prepare the arguments]]
+    - [[#example-docs][Example docs]]
+      - [[#one-doc][One doc]]
+      - [[#many-doc][Many doc]]
+    - [[#queries][Queries]]
+      - [[#select-all-documents-in-a-collection][Select All Documents in a Collection]]
+      - [[#specify-equality-condition][Specify Equality Condition]]
+      - [[#specify-conditions-using-query-operators][Specify Conditions Using Query Operators]]
+      - [[#specify-and-conditions][Specify AND Conditions]]
+      - [[#specify-or-conditions][Specify OR Conditions]]
+      - [[#specify-and-as-well-as-or-conditions][Specify AND as well as OR Conditions]]
+    - [[#update-operators][Update Operators]]
+      - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
+      - [[#increment-the-value-of-the-field-by-the-specified-amount][Increment the value of the field by the specified amount]]
+  - [[#run-the-command][Run the command]]
+    - [[#insert-documents][Insert Documents]]
+      - [[#insert-one-document][Insert one document]]
+      - [[#insert-multiple-documents][Insert multiple documents]]
+    - [[#find-documents][Find documents]]
+    - [[#update-documents][Update Documents]]
+      - [[#update-one][Update one]]
+      - [[#update-many][Update many]]
+      - [[#replace-documents][Replace documents]]
+    - [[#delete-documents][Delete Documents]]
+      - [[#delete-one][Delete one]]
+      - [[#delete-many][Delete many]]
+    - [[#docker-container][Docker container]]
+      - [[#dockerfile][Dockerfile]]
+      - [[#build-the-image][Build the image]]
+      - [[#configure][Configure]]
+      - [[#run-the-container][Run the container]]
   - [[#references][References]]
 
 ** System environment
@@ -64,7 +67,8 @@ from pprint import pprint
 from pymongo import MongoClient
 #+END_SRC
 
-** Parameters
+** Initialize the connection
+*** Parameters
 
 #+BEGIN_SRC python
 MONGODB_USERNAME = os.environ.get("MONGODB_USERNAME")
@@ -74,32 +78,33 @@ MONGODB_DATABASE = os.environ.get("MONGODB_DATABASE")
 MONGODB_COLLECTION = os.environ.get("MONGODB_COLLECTION")
 #+END_SRC
 
-** Construct the URI
+*** Construct the URI
 
 #+BEGIN_SRC python
 uri = f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}"
 #+END_SRC
 
-** Connect to the MongoDB
+*** Connect to the MongoDB
 
 #+BEGIN_SRC python
 connection = MongoClient(uri)
 #+END_SRC
 
-** Select the database
+*** Select the database
 
 #+BEGIN_SRC python
 db = connection[MONGODB_DATABASE]
 #+END_SRC
 
-** Select the collection
+*** Select the collection
 
 #+BEGIN_SRC python
 collection = db[MONGODB_COLLECTION]
 #+END_SRC
 
-** Example docs
-*** One doc
+** Prepare the arguments
+*** Example docs
+**** One doc
 
 #+BEGIN_SRC python
 doc = {
@@ -114,7 +119,7 @@ doc = {
 }
 #+END_SRC
 
-*** Many doc
+**** Many doc
 
 #+BEGIN_SRC python
 docs = [
@@ -151,51 +156,38 @@ docs = [
 ]
 #+END_SRC
 
-** Insert Documents
-*** Insert one document
-
-#+BEGIN_SRC python
-collection.insert_one(doc)
-#+END_SRC
-
-*** Insert multiple documents
-
-#+BEGIN_SRC python
-collection.insert_many(docs)
-#+END_SRC
-
-** Queries
-*** Select All Documents in a Collection
+*** Queries
+**** Select All Documents in a Collection
 
 #+BEGIN_SRC python
 query = {}
 #+END_SRC
 
-*** Specify Equality Condition
+**** Specify Equality Condition
 
 #+BEGIN_SRC python
 query = {"status": "D"}
 #+END_SRC
 
-*** Specify Conditions Using Query Operators
+**** Specify Conditions Using Query Operators
 
 #+BEGIN_SRC python
 query = {"status": {"$in": ["A", "D"]}}
 #+END_SRC
 
-*** Specify AND Conditions
+**** Specify AND Conditions
 
 #+BEGIN_SRC python
 query = {"status": "A", "qty": {"$lt": 30}}
 #+END_SRC
 
-*** Specify OR Conditions
+**** Specify OR Conditions
 
 #+BEGIN_SRC python
 query = {"$or": [{"status": "A"}, {"qty": {"$lt": 30}}]}
 #+END_SRC
 
-*** Specify AND as well as OR Conditions
+**** Specify AND as well as OR Conditions
 
 #+BEGIN_SRC python
 query = {
@@ -204,16 +196,8 @@ query = {
 }
 #+END_SRC
 
-** Find documents
-
-#+BEGIN_SRC python
-cursor = collection.find(query)
-for doc in cursor:
-     pprint(doc)
-#+END_SRC
-
-** Update Operators
-*** Set the value of a field to current date
+*** Update Operators
+**** Set the value of a field to current date
 
 #+BEGIN_SRC python
 update_operator = {
@@ -225,7 +209,7 @@ update_operator = {
 }
 #+END_SRC
 
-*** Increment the value of the field by the specified amount
+**** Increment the value of the field by the specified amount
 
 #+BEGIN_SRC python
 update_operator = {
@@ -236,53 +220,75 @@ update_operator = {
 }
 #+END_SRC
 
-** Update Documents
-*** Update one
+** Run the command
+*** Insert Documents
+**** Insert one document
+
+#+BEGIN_SRC python
+collection.insert_one(doc)
+#+END_SRC
+
+**** Insert multiple documents
+
+#+BEGIN_SRC python
+collection.insert_many(docs)
+#+END_SRC
+
+*** Find documents
+
+#+BEGIN_SRC python
+cursor = collection.find(query)
+for doc in cursor:
+     pprint(doc)
+#+END_SRC
+
+*** Update Documents
+**** Update one
 
 #+BEGIN_SRC python
 collection.update_one(query, update_operator)
 #+END_SRC
 
-*** Update many
+**** Update many
 
 #+BEGIN_SRC python
 collection.update_many(query, update_operator)
 #+END_SRC
 
-*** Replace documents
+**** Replace documents
 
 #+BEGIN_SRC python
 collection.replace_one(query, doc)
 #+END_SRC
 
-** Delete Documents
-*** Delete one
+*** Delete Documents
+**** Delete one
 
 #+BEGIN_SRC python
 collection.delete_one(query)
 #+END_SRC
 
-*** Delete many
+**** Delete many
 
 #+BEGIN_SRC python
 collection.delete_many(query)
 #+END_SRC
 
-** Docker container
-*** Dockerfile
+*** Docker container
+**** Dockerfile
 
 #+BEGIN_SRC conf :tangle Dockerfile
 FROM python:3.9.1-buster
 RUN pip install pymongo==3.11.3
 #+END_SRC
 
-*** Build the image
+**** Build the image
 
 #+BEGIN_SRC sh
 docker build -t python-pymongo-usage .
 #+END_SRC
 
-*** Configure
+**** Configure
 
 #+BEGIN_SRC conf :tangle .env.dist
 MONGODB_USERNAME=user
@@ -292,7 +298,7 @@ MONGODB_DATABASE=newdb
 MONGODB_COLLECTION=testcollection
 #+END_SRC
 
-*** Run the container
+**** Run the container
 
 #+BEGIN_SRC sh
 docker run --rm --link mongodb --env-file .env -it python-pymongo-usage python
