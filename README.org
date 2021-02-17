@@ -26,6 +26,7 @@
       - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
       - [[#increment-the-value-of-the-field-by-the-specified-amount][Increment the value of the field by the specified amount]]
     - [[#aggregation-operators][Aggregation Operators]]
+      - [[#limit][Limit]]
       - [[#match][Match]]
   - [[#run-the-command][Run the command]]
     - [[#insert-documents][Insert Documents]]
@@ -229,6 +230,14 @@ update_operator = {
 
 #+BEGIN_SRC python
 pipeline = []
+#+END_SRC
+
+**** Limit
+
+#+BEGIN_SRC python
+pipeline.append({
+    "$limit": 100,
+})
 #+END_SRC
 
 **** Match
