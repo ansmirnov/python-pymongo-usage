@@ -246,7 +246,10 @@ pipeline.append({
 
 #+BEGIN_SRC python
 pipeline.append({
-    "$match": { "status": "A"}
+    "$match": {"status": "A"}
+})
+#+END_SRC
+
 **** Projection
 
 #+BEGIN_SRC python
