@@ -29,6 +29,7 @@
     - [[#insert-documents][Insert Documents]]
       - [[#insert-one-document][Insert one document]]
       - [[#insert-multiple-documents][Insert multiple documents]]
+    - [[#number-of-documents-in-the-collection][Number of documents in the collection]]
     - [[#find-documents][Find documents]]
     - [[#update-documents][Update Documents]]
       - [[#update-one][Update one]]
@@ -232,6 +233,12 @@ collection.insert_one(doc)
 
 #+BEGIN_SRC python
 collection.insert_many(docs)
+#+END_SRC
+
+*** Number of documents in the collection
+
+#+BEGIN_SRC python
+collection.count_documents(query)
 #+END_SRC
 
 *** Find documents
