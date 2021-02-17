@@ -29,6 +29,7 @@
       - [[#limit][Limit]]
       - [[#match][Match]]
       - [[#projection][Projection]]
+      - [[#sort][Sort]]
   - [[#run-the-command][Run the command]]
     - [[#insert-documents][Insert Documents]]
       - [[#insert-one-document][Insert one document]]
@@ -254,6 +255,11 @@ pipeline.append({
 })
 #+END_SRC
 
+**** Sort
+
+#+BEGIN_SRC python
+pipeline.append({
+    "$sort": {"status": -1}
 })
 #+END_SRC
 
