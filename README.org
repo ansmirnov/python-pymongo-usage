@@ -40,6 +40,7 @@
     - [[#delete-documents][Delete Documents]]
       - [[#delete-one][Delete one]]
       - [[#delete-many][Delete many]]
+    - [[#print-the-cursor-data][Print the cursor data]]
   - [[#docker-container][Docker container]]
       - [[#dockerfile][Dockerfile]]
       - [[#build-the-image][Build the image]]
@@ -259,8 +260,6 @@ collection.count_documents(query)
 
 #+BEGIN_SRC python
 cursor = collection.find(query)
-for doc in cursor:
-     pprint(doc)
 #+END_SRC
 
 *** Update Documents
@@ -293,6 +292,13 @@ collection.delete_one(query)
 
 #+BEGIN_SRC python
 collection.delete_many(query)
+#+END_SRC
+
+*** Print the cursor data
+
+#+BEGIN_SRC python
+for doc in cursor:
+     pprint(doc)
 #+END_SRC
 
 ** Docker container
