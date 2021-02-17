@@ -25,6 +25,7 @@
     - [[#update-operators][Update Operators]]
       - [[#set-the-value-of-a-field-to-current-date][Set the value of a field to current date]]
       - [[#increment-the-value-of-the-field-by-the-specified-amount][Increment the value of the field by the specified amount]]
+    - [[#aggregation-operators][Aggregation Operators]]
   - [[#run-the-command][Run the command]]
     - [[#insert-documents][Insert Documents]]
       - [[#insert-one-document][Insert one document]]
@@ -219,6 +220,12 @@ update_operator = {
         "a.a": 1,
     }
 }
+#+END_SRC
+
+*** Aggregation Operators
+
+#+BEGIN_SRC python
+pipeline = []
 #+END_SRC
 
 ** Run the command
