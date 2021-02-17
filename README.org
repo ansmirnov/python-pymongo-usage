@@ -309,7 +309,7 @@ collection.delete_many(query)
 *** Aggregate operator
 
 #+BEGIN_SRC python
-cursor = collection.aggregate(pipeline)
+cursor = collection.aggregate(pipeline, allowDiskUse=True)
 #+END_SRC
 
 *** Print the cursor data
