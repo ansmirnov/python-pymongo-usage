@@ -234,7 +234,9 @@ pipeline = []
 **** Match
 
 #+BEGIN_SRC python
-pipeline.append({ "$match": { "status": "A" } })
+pipeline.append({
+    "$match": { "status": "A"}
+})
 #+END_SRC
 
 ** Run the command
