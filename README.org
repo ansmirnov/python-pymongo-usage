@@ -338,20 +338,20 @@ for doc in cursor:
 #+END_SRC
 
 ** Docker container
-**** Dockerfile
+*** Dockerfile
 
 #+BEGIN_SRC conf :tangle Dockerfile
 FROM python:3.9.1-buster
 RUN pip install pymongo==3.11.3
 #+END_SRC
 
-**** Build the image
+*** Build the image
 
 #+BEGIN_SRC sh
 docker build -t python-pymongo-usage .
 #+END_SRC
 
-**** Configure
+*** Configure
 
 #+BEGIN_SRC conf :tangle .env.dist
 MONGODB_USERNAME=user
@@ -361,7 +361,7 @@ MONGODB_DATABASE=newdb
 MONGODB_COLLECTION=testcollection
 #+END_SRC
 
-**** Run the container
+*** Run the container
 
 #+BEGIN_SRC sh
 docker run --rm --link mongodb --env-file .env -it python-pymongo-usage python
